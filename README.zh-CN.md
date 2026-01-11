@@ -1,0 +1,112 @@
+# opencode-mystatus
+
+[OpenCode](https://opencode.ai) 插件，用于查询多个 AI 平台的账号额度使用情况。
+
+[English](./README.md)
+
+## 支持的平台
+
+| 平台         | 账号类型          | 数据来源                                       |
+| ------------ | ----------------- | ---------------------------------------------- |
+| OpenAI       | Plus / Team / Pro | `~/.local/share/opencode/auth.json`            |
+| 智谱 AI      | Coding Plan       | `~/.local/share/opencode/auth.json`            |
+| Google Cloud | Antigravity       | `~/.config/opencode/antigravity-accounts.json` |
+
+## 安装
+
+### 从 npm 安装
+
+在 `opencode.json` 中添加：
+
+```json
+{
+  "plugin": ["opencode-mystatus"]
+}
+```
+
+### 从本地文件安装
+
+将插件文件复制到项目的 `.opencode/plugin/` 目录，或复制到 `~/.config/opencode/plugin/` 以全局使用。
+
+## 使用方法
+
+使用 `/mystatus` 命令或调用 `mystatus` 工具：
+
+```
+/mystatus
+```
+
+## 输出示例
+
+```
+## OpenAI 账号额度
+
+Account:        user@example.com (team)
+
+3小时限额
+██████████████████████████████ 剩余 85%
+重置: 2小时30分钟后
+
+## 智谱 AI 账号额度
+
+Account:        9c89****AQVM (Coding Plan)
+
+5 小时 Token 限额
+██████████████████████████████ 剩余 95%
+已用: 0.5M / 10.0M
+重置: 4小时后
+
+## Google Cloud 账号额度
+
+### user@gmail.com
+
+G3 Pro     4h 59m     ████████████████████ 100%
+G3 Image   4h 59m     ████████████████████ 100%
+G3 Flash   4h 59m     ████████████████████ 100%
+Claude     2d 9h      ░░░░░░░░░░░░░░░░░░░░ 0%
+```
+
+## 功能特性
+
+- 一条命令查询多个 AI 平台的额度使用情况
+- 可视化进度条显示剩余额度
+- 重置时间倒计时
+- 多语言支持（中文 / 英文）
+- 支持多个 Google Cloud 账号
+- API Key 脱敏显示，保护安全
+
+## 配置
+
+无需额外配置。插件自动从以下位置读取认证信息：
+
+- **OpenAI 和智谱 AI**: `~/.local/share/opencode/auth.json`
+- **Google Cloud**: `~/.config/opencode/antigravity-accounts.json`
+
+## Google Cloud 模型
+
+插件显示以下模型的额度：
+
+| 显示名称 | 模型 Key                                       |
+| -------- | ---------------------------------------------- |
+| G3 Pro   | `gemini-3-pro-high` / `gemini-3-pro-low`       |
+| G3 Image | `gemini-3-pro-image`                           |
+| G3 Flash | `gemini-3-flash`                               |
+| Claude   | `claude-opus-4-5-thinking` / `claude-opus-4-5` |
+
+## 开发
+
+```bash
+# 使用 npm
+npm install
+npm run typecheck
+npm run build
+
+# 或使用 Bun
+bun install
+bun run typecheck
+bun run build
+```
+
+## 许可证
+
+MIT
