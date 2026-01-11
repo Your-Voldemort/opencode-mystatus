@@ -1,5 +1,5 @@
 ---
-description: 查询所有账号的额度使用情况
+description: Query quota usage for all AI accounts
 ---
 
-请使用 mystatus 工具查询当前所有账号的额度使用情况，直接展示工具返回的结果，不要做任何修改或额外解释。
+Use the mystatus tool to query quota usage. Return the result as-is without modification.
