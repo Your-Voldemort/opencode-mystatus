@@ -50,15 +50,23 @@ To install this plugin, perform these steps:
 
 </details>
 
-### From npm
+### Manual Installation
 
-Add to your `~/.config/opencode/opencode.json`:
+1. Add the plugin and slash command to your `~/.config/opencode/opencode.json`:
 
 ```json
 {
-  "plugin": ["opencode-mystatus@1.0.1"]
+  "plugin": ["opencode-mystatus@1.0.1"],
+  "command": {
+    "mystatus": {
+      "description": "Query quota usage for all AI accounts",
+      "template": "Use the mystatus tool to query quota usage. Return the result as-is without modification."
+    }
+  }
 }
 ```
+
+2. Restart OpenCode
 
 ### From local files
 
