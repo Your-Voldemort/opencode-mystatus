@@ -68,9 +68,13 @@ To install this plugin, perform these steps:
 
 2. Restart OpenCode
 
-### From local files
+### From Local Files
 
-Copy the plugin files to `.opencode/plugin/` in your project or `~/.config/opencode/plugin/` for global use.
+Copy the plugin files to your OpenCode config directory:
+
+1. Copy `plugin/mystatus.ts` and `plugin/lib/` to `~/.config/opencode/plugin/`
+2. Copy `command/mystatus.md` to `~/.config/opencode/command/`
+3. Restart OpenCode
 
 ## Usage
 

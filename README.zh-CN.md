@@ -70,7 +70,11 @@ Install the opencode-mystatus plugin by following: https://raw.githubusercontent
 
 ### 从本地文件安装
 
-将插件文件复制到项目的 `.opencode/plugin/` 目录，或复制到 `~/.config/opencode/plugin/` 以全局使用。
+将插件文件复制到 OpenCode 配置目录：
+
+1. 将 `plugin/mystatus.ts` 和 `plugin/lib/` 复制到 `~/.config/opencode/plugin/`
+2. 将 `command/mystatus.md` 复制到 `~/.config/opencode/command/`
+3. 重启 OpenCode
 
 ## 使用方法
 
