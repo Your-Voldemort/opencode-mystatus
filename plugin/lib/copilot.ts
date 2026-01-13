@@ -9,7 +9,7 @@
 
 import { t } from "./i18n";
 import { type QueryResult, type CopilotAuthData } from "./types";
-import { createProgressBar, fetchWithTimeout, maskString } from "./utils";
+import { createProgressBar, fetchWithTimeout } from "./utils";
 
 // ============================================================================
 // Type Definitions
